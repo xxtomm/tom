@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Caveat } from "next/font/google";
 import localFont from "next/font/local";
 
 import "./globals.css";
@@ -11,6 +11,11 @@ const geistSans = Geist({
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+const caveatFont = Caveat({
+  variable: "--font-caveat",
   subsets: ["latin"],
 });
 
@@ -48,7 +53,8 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${openRunde.variable} overscroll-none font-open-runde min-h-dvh antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${caveatFont.variable} ${openRunde.variable} overscroll-none font-open-runde min-h-dvh antialiased`}
+        suppressHydrationWarning
       >
         <ThemeProvider>{children}</ThemeProvider>
       </body>

@@ -1,0 +1,157 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import {
+  IconCheckmark1,
+  IconPullRequest,
+  IconEmail1,
+  IconPaintBrush,
+  IconPencilLine,
+  IconAudio,
+  IconRocket,
+  IconTelegram,
+  IconThinkingBubble,
+  IconWindowApp,
+  IconWindowCursor,
+} from "@central-icons-react/round-filled-radius-3-stroke-2";
+import { AnimatePresence, motion } from "motion/react";
+import { Button } from "@/components/ui/button";
+import { siteConfig, getAge } from "@/config/site";
+
+const heroIcons = [
+  IconPaintBrush,
+  IconPencilLine,
+  IconAudio,
+  IconRocket,
+  IconThinkingBubble,
+  IconPullRequest,
+];
+
+export function Hero() {
+  const [isCopied, setIsCopied] = useState(false);
+  const [iconIndex, setIconIndex] = useState(0);
+
+  useEffect(() => {
+    setIconIndex(Math.floor(Math.random() * heroIcons.length));
+  }, []);
+
+  const RandomIcon = heroIcons[iconIndex];
+
+  const handleCopy = async () => {
+    await navigator.clipboard.writeText(siteConfig.email);
+    setIsCopied(true);
+    setTimeout(() => setIsCopied(false), 2000);
+  };
+
+  return (
+    <div className="gap-4 flex flex-col">
+      <h1 className="flex gap-1.5 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 items-center">
+        <span className="font-medium">
+          <motion.span
+            className="inline-block"
+            initial={{ opacity: 0, filter: "blur(5px)", y: 8 }}
+            animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+            transition={{ ease: "easeOut", duration: 0.8, bounce: 0 }}
+          >
+            {siteConfig.name},&nbsp;
+          </motion.span>
+          <motion.span
+            className="inline-block text-accent-foreground/75"
+            initial={{ opacity: 0, filter: "blur(5px)", y: 8 }}
+            animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+            transition={{
+              ease: "easeOut",
+              duration: 0.8,
+              bounce: 0,
+            }}
+          >
+            {siteConfig.title}
+          </motion.span>
+        </span>
+        <motion.div
+          className="font-medium"
+          initial={{ opacity: 0, filter: "blur(5px)" }}
+          animate={{ opacity: 1, filter: "blur(0px)" }}
+          transition={{
+            type: "spring",
+            duration: 1,
+            bounce: 0,
+            delay: 1,
+          }}
+        >
+          <RandomIcon className="text-blue-500" />
+        </motion.div>
+      </h1>
+      <motion.div
+        initial={{ opacity: 0, filter: "blur(5px)", y: 8 }}
+        animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+        transition={{
+          ease: "easeOut",
+          duration: 0.8,
+          bounce: 0,
+          delay: 0.4,
+        }}
+        className="gap-1 flex flex-col"
+      >
+        <p className="font-medium text-muted-foreground">
+          I&apos;m a {getAge()} y/o <span className="text-primary">design engineer</span> who cares deeply about{" "}
+          <br />
+          <span className="font-bold font-caveat text-xl pr-1 bg-clip-text text-transparent bg-[linear-gradient(180deg,oklch(0.40_0.29_291),oklch(0.74_0.15_19))]">craft</span> and detail.
+        </p>
+        <p className="font-medium text-muted-foreground">
+          I created{" "}
+          <Link href={siteConfig.links.x_spell} target="_blank" className="text-primary underline underline-offset-2">@spell_ui</Link>,
+          and I spend most of my time blending design and code to make
+          {" "}<span className="[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 gap-1 items-baseline inline-flex align-baseline text-primary"><IconWindowCursor className="my-auto" />interfaces</span> that feel right.
+        </p>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, filter: "blur(5px)", y: 8 }}
+        animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+        transition={{
+          ease: "easeOut",
+          duration: 0.8,
+          bounce: 0,
+          delay: 0.6,
+        }}
+        className="flex justify-start items-center gap-2"
+      >
+        <Button
+          variant={"default"}
+          aria-label="Send Message via Telegram"
+          className="shimmer-hover pr-3! cursor-pointer rounded-full transition-transform duration-150 ease-out will-change-transform active:scale-[0.97] flex items-center gap-1.5"
+          asChild
+        >
+          <Link href={siteConfig.links.telegram} target="_blank">
+            <IconTelegram aria-hidden />
+            <span className="shimmer-text font-medium">Send Message</span>
+          </Link>
+        </Button>
+        <Button
+          variant={"secondary"}
+          aria-label="Copy email address"
+          onClick={handleCopy}
+          className="pr-3! cursor-pointer rounded-full transition-transform duration-150 ease-out will-change-transform active:scale-[0.97] flex items-center gap-1.5"
+        >
+          <AnimatePresence mode="popLayout" initial={false}>
+            <motion.div
+              key={isCopied ? "check" : "copy"}
+              initial={{ opacity: 0, scale: 0.25, filter: "blur(4px)" }}
+              animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+              exit={{ opacity: 0, scale: 0.25, filter: "blur(4px)" }}
+              transition={{
+                type: "spring",
+                duration: 0.3,
+                bounce: 0,
+              }}
+            >
+              {isCopied ? <IconCheckmark1 /> : <IconEmail1 aria-hidden />}
+            </motion.div>
+          </AnimatePresence>
+          <span className="font-medium">Copy Email</span>
+        </Button>
+      </motion.div>
+    </div>
+  );
+}
