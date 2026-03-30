@@ -83,18 +83,18 @@ export function Hero() {
           <RandomIcon className="text-blue-500" />
         </motion.div>
       </h1>
-      <motion.div
-        initial={{ opacity: 0, filter: "blur(5px)", y: 8 }}
+      <div
+        className="gap-1 flex flex-col"
+      >
+        <motion.p
+         initial={{ opacity: 0, filter: "blur(5px)", y: 8 }}
         animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
         transition={{
           ease: "easeOut",
           duration: 0.8,
           bounce: 0,
-          delay: 0.2,
-        }}
-        className="gap-1 flex flex-col"
-      >
-        <p className="font-medium text-muted-foreground">
+          delay: 0.1,
+        }} className="font-medium text-muted-foreground">
           I&apos;m a {getAge()} y/o{" "}
           <span className="text-primary">design engineer</span>{" "}
           who cares deeply about craft, detail, and the{" "}
@@ -103,8 +103,16 @@ export function Hero() {
           </span>{" "}
           that make a{" "}
           <span className="font-serif text-primary">difference</span>.
-        </p>
-        <p className="font-medium text-muted-foreground">
+        </motion.p>
+        <motion.p
+         initial={{ opacity: 0, filter: "blur(5px)", y: 8 }}
+        animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+        transition={{
+          ease: "easeOut",
+          duration: 0.8,
+          bounce: 0,
+          delay: 0.2,
+        }} className="font-medium text-muted-foreground">
           I created{" "}
           <Link
             href={siteConfig.links.x_spell}
@@ -118,8 +126,8 @@ export function Hero() {
             <IconWindowCursor className="my-auto" />interfaces
           </span>{" "}
           that feel right.
-        </p>
-      </motion.div>
+        </motion.p>
+      </div>
       <motion.div
         initial={{ opacity: 0, filter: "blur(5px)", y: 8 }}
         animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
@@ -127,7 +135,7 @@ export function Hero() {
           ease: "easeOut",
           duration: 0.8,
           bounce: 0,
-          delay: 0.4,
+          delay: 0.3,
         }}
         className="flex justify-start items-center gap-2"
       >
