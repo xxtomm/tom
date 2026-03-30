@@ -102,7 +102,7 @@ export function Hero() {
             little things
           </span>{" "}
           that make a{" "}
-          <span className="font-serif text-primary">difference</span>.
+          <span className="font-serif text-primary text-lg">difference</span>.
         </motion.p>
         <motion.p
          initial={{ opacity: 0, filter: "blur(5px)", y: 8 }}
@@ -142,7 +142,7 @@ export function Hero() {
         <Button
           variant={"default"}
           aria-label="Send Message via Telegram"
-          className="shimmer-hover pr-3! cursor-pointer rounded-full transition-transform duration-150 ease-out will-change-transform active:scale-[0.97] flex items-center gap-1.5"
+          className="shimmer-hover text-[15px] pr-3! cursor-pointer rounded-full transition-transform duration-150 ease-out will-change-transform active:scale-[0.97] flex items-center gap-1.5"
           asChild
         >
           <Link href={siteConfig.links.telegram} target="_blank">
@@ -154,7 +154,7 @@ export function Hero() {
           variant={"secondary"}
           aria-label="Copy email address"
           onClick={handleCopy}
-          className="pr-3! cursor-pointer rounded-full transition-transform duration-150 ease-out will-change-transform active:scale-[0.97] flex items-center gap-1.5"
+          className="pr-3! text-[15px] cursor-pointer rounded-full transition-transform duration-150 ease-out will-change-transform active:scale-[0.97] flex items-center gap-1.5"
         >
           <AnimatePresence mode="popLayout" initial={false}>
             <motion.div
