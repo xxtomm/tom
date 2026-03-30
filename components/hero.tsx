@@ -3,12 +3,12 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import {
+  IconAudio,
   IconCheckmark1,
-  IconPullRequest,
   IconEmail1,
   IconPaintBrush,
   IconPencilLine,
-  IconAudio,
+  IconPullRequest,
   IconRocket,
   IconTelegram,
   IconThinkingBubble,
@@ -17,7 +17,7 @@ import {
 } from "@central-icons-react/round-filled-radius-3-stroke-2";
 import { AnimatePresence, motion } from "motion/react";
 import { Button } from "@/components/ui/button";
-import { siteConfig, getAge } from "@/config/site";
+import { getAge, siteConfig } from "@/config/site";
 
 const heroIcons = [
   IconPaintBrush,
@@ -77,7 +77,7 @@ export function Hero() {
             type: "spring",
             duration: 1,
             bounce: 0,
-            delay: 1,
+            delay: 0.8,
           }}
         >
           <RandomIcon className="text-blue-500" />
@@ -90,20 +90,34 @@ export function Hero() {
           ease: "easeOut",
           duration: 0.8,
           bounce: 0,
-          delay: 0.4,
+          delay: 0.2,
         }}
         className="gap-1 flex flex-col"
       >
         <p className="font-medium text-muted-foreground">
-          I&apos;m a {getAge()} y/o <span className="text-primary">design engineer</span> who cares deeply about{" "}
-          <br />
-          <span className="font-bold font-caveat text-xl pr-1 bg-clip-text text-transparent bg-[linear-gradient(180deg,oklch(0.40_0.29_291),oklch(0.74_0.15_19))]">craft</span> and detail.
+          I&apos;m a {getAge()} y/o{" "}
+          <span className="text-primary">design engineer</span>{" "}
+          who cares deeply about craft, detail, and the{" "}
+          <span className="font-bold font-caveat text-xl pr-1 bg-clip-text text-transparent bg-[linear-gradient(180deg,oklch(0.40_0.29_291),oklch(0.74_0.15_19))]">
+            little things
+          </span>{" "}
+          that make a{" "}
+          <span className="font-serif text-primary">difference</span>.
         </p>
         <p className="font-medium text-muted-foreground">
           I created{" "}
-          <Link href={siteConfig.links.x_spell} target="_blank" className="text-primary underline underline-offset-2">@spell_ui</Link>,
-          and I spend most of my time blending design and code to make
-          {" "}<span className="[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 gap-1 items-baseline inline-flex align-baseline text-primary"><IconWindowCursor className="my-auto" />interfaces</span> that feel right.
+          <Link
+            href={siteConfig.links.x_spell}
+            target="_blank"
+            className="text-primary underline underline-offset-2"
+          >
+            @spell_ui
+          </Link>, and I spend most of my time blending design and code to make
+          {" "}
+          <span className="[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 gap-1 items-baseline inline-flex align-baseline text-primary">
+            <IconWindowCursor className="my-auto" />interfaces
+          </span>{" "}
+          that feel right.
         </p>
       </motion.div>
       <motion.div
@@ -113,7 +127,7 @@ export function Hero() {
           ease: "easeOut",
           duration: 0.8,
           bounce: 0,
-          delay: 0.6,
+          delay: 0.4,
         }}
         className="flex justify-start items-center gap-2"
       >

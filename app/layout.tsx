@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono, Caveat } from "next/font/google";
+import { Caveat, Geist, Geist_Mono } from "next/font/google";
 import localFont from "next/font/local";
 
 import "./globals.css";
@@ -17,6 +17,17 @@ const geistMono = Geist_Mono({
 const caveatFont = Caveat({
   variable: "--font-caveat",
   subsets: ["latin"],
+});
+
+const redactionSerif = localFont({
+  src: [
+    {
+      path: "../public/fonts/Redaction35-Regular.otf",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+  variable: "--font-redaction-serif",
 });
 
 const openRunde = localFont({
@@ -53,7 +64,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${caveatFont.variable} ${openRunde.variable} overscroll-none font-open-runde min-h-dvh antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${caveatFont.variable} ${openRunde.variable} ${redactionSerif.variable} overscroll-none font-open-runde min-h-dvh antialiased`}
         suppressHydrationWarning
       >
         <ThemeProvider>{children}</ThemeProvider>

@@ -13,22 +13,33 @@ export function ThemeToggle() {
 
   return (
     <motion.div
-      animate={{ rotate: resolvedTheme === "dark" ? -180 : 0 }}
-      transition={{ type: "spring", duration: 0.5, bounce: 0.2 }}
+      initial={{ opacity: 0, filter: "blur(5px)" }}
+      animate={{ opacity: 1, filter: "blur(0px)" }}
+      transition={{
+        ease: "easeOut",
+        duration: 0.5,
+        bounce: 0,
+        delay: 1,
+      }}
     >
-      <Button
-        variant="ghost"
-        size="icon"
-        aria-label="Toggle theme"
-        onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
-        className="cursor-pointer rounded-full"
+      <motion.div
+        animate={{ rotate: resolvedTheme === "dark" ? -180 : 0 }}
+        transition={{ type: "spring", duration: 0.5, bounce: 0.2 }}
       >
-        <IconAppearanceLightMode aria-hidden className="size-5 dark:hidden" />
-        <IconAppearanceDarkMode
-          aria-hidden
-          className="size-5 hidden dark:block"
-        />
-      </Button>
+        <Button
+          variant="ghost"
+          size="icon"
+          aria-label="Toggle theme"
+          onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
+          className="cursor-pointer rounded-full"
+        >
+          <IconAppearanceLightMode aria-hidden className="size-5 dark:hidden" />
+          <IconAppearanceDarkMode
+            aria-hidden
+            className="size-5 hidden dark:block"
+          />
+        </Button>
+      </motion.div>
     </motion.div>
   );
 }
