@@ -68,7 +68,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${caveatFont.variable} ${openRunde.variable} ${redactionSerif.variable} overscroll-none font-open-runde min-h-dvh antialiased`}
         suppressHydrationWarning
       >
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider enableSystem>{children}</ThemeProvider>
         <Analytics />
       </body>
     </html>
