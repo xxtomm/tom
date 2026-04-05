@@ -62,7 +62,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning data-scroll-behavior="smooth" className="overscroll-none">
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${caveatFont.variable} ${openRunde.variable} ${redactionSerif.variable} overscroll-none font-open-runde min-h-dvh antialiased`}
         suppressHydrationWarning

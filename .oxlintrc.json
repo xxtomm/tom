@@ -1,0 +1,4 @@
+{
+  "plugins": ["react", "nextjs", "typescript"],
+  "rules": {}
+}

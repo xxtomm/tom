@@ -12,7 +12,6 @@ import {
   IconRocket,
   IconTelegram,
   IconThinkingBubble,
-  IconWindowApp,
   IconWindowCursor,
 } from "@central-icons-react/round-filled-radius-3-stroke-2";
 import { AnimatePresence, motion } from "motion/react";
@@ -100,11 +99,11 @@ export function Hero() {
           I&apos;m a {getAge()} y/o{" "}
           <span className="text-primary">design engineer</span>{" "}
           who cares deeply about craft, detail, and the{" "}
-          <span className=" font-bold font-caveat text-xl pr-px leading-0 whitespace-nowrap bg-clip-text text-transparent bg-[linear-gradient(180deg,oklch(0.40_0.29_291),oklch(0.74_0.15_19))]">
+          <span className=" font-bold font-caveat text-xl pr-1 leading-0 whitespace-nowrap bg-clip-text text-transparent bg-[linear-gradient(180deg,oklch(0.40_0.29_291),oklch(0.74_0.15_19))]">
             little things
           </span>{" "}
           that make a{" "}
-          <span className="font-serif text-primary text-lg">difference</span>.
+          <span className="font-serif text-primary text-[17px] leading-0">difference</span>.
         </motion.p>
         <motion.p
          initial={{ opacity: 0, filter: "blur(5px)", y: 8 }}
@@ -117,16 +116,19 @@ export function Hero() {
         }} className="font-medium text-muted-foreground">
           I created{" "}
           <Link
-            href={siteConfig.links.x_spell}
+            href={siteConfig.links.spell}
             target="_blank"
             className="text-primary underline underline-offset-2"
           >
             @spell_ui
           </Link>, and I spend most of my time blending design and code to make
           {" "}
-          <span className="[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 gap-1 items-baseline inline-flex align-baseline text-primary">
+          <Link
+            href="/craft"
+            className="[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 gap-1 items-baseline inline-flex align-baseline text-primary underline underline-offset-2"
+          >
             <IconWindowCursor className="my-auto" />interfaces
-          </span>{" "}
+          </Link>{" "}
           that feel right.
         </motion.p>
       </div>

@@ -155,3 +155,15 @@
     @apply font-sans;
   }
 }
+
+::-webkit-scrollbar {
+  width: 0px;
+  display: none; /* Safari and Chrome */
+  display: none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
