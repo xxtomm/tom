@@ -9,6 +9,9 @@ export const siteConfig = {
     spell: "https://spell.sh",
     x: "https://x.com/tomm_ui",
     x_spell: "https://x.com/spell_ui",
+    spell_repo: "https://github.com/xxtomm/spell-ui",
+    github: "https://github.com/xxtomm",
+    discord: "https://discord.com/users/1122878999065002155"
   },
 } as const;
 

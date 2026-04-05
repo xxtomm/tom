@@ -12,7 +12,7 @@ export default function Page() {
 
       <main className="flex flex-1 flex-col items-center justify-center">
         <section className="px-6 sm:px-10 md:px-16 lg:px-20">
-          <div className="max-w-lg text-base">
+          <div className="max-w-md text-base">
             <Hero />
           </div>
         </section>

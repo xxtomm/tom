@@ -5,7 +5,10 @@ import Link from "next/link";
 import {
   IconAudio,
   IconCheckmark1,
+  IconDiscord,
+  IconDotGrid1x3HorizontalTight,
   IconEmail1,
+  IconGithub,
   IconPaintBrush,
   IconPencilLine,
   IconPullRequest,
@@ -13,8 +16,10 @@ import {
   IconTelegram,
   IconThinkingBubble,
   IconWindowCursor,
+  IconX,
 } from "@central-icons-react/round-filled-radius-3-stroke-2";
 import { AnimatePresence, motion } from "motion/react";
+import { Menu } from "@base-ui/react/menu";
 import { Button } from "@/components/ui/button";
 import { getAge, siteConfig } from "@/config/site";
 
@@ -55,7 +60,9 @@ export function Hero() {
             animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
             transition={{ ease: "easeOut", duration: 0.8, bounce: 0 }}
           >
-            {siteConfig.name},&nbsp;
+            <Link href={siteConfig.links.x} target="_blank">
+              {siteConfig.name},&nbsp;
+            </Link>
           </motion.span>
           <motion.span
             className="inline-block text-accent-foreground/75"
@@ -83,6 +90,44 @@ export function Hero() {
         >
           <RandomIcon className="text-blue-500" />
         </motion.div>
+        <Menu.Root>
+          <Menu.Trigger
+            render={
+              <Button
+                variant={"ghost"}
+                size={'icon'}
+                aria-label="Links"
+                className="ml-auto cursor-pointer rounded-full transition-transform duration-150 ease-out will-change-transform active:scale-[0.97] flex items-center gap-1.5"
+              >
+                <IconDotGrid1x3HorizontalTight />
+              </Button>
+            }
+          />
+          <Menu.Portal>
+            <Menu.Positioner sideOffset={8} align="end">
+              <Menu.Popup className="menu-popup z-50 min-w-36 overflow-hidden rounded-xl border bg-popover p-1 text-popover-foreground shadow-md">
+                <Menu.Item
+                  render={<Link href={siteConfig.links.x} target="_blank" />}
+                  className="flex cursor-pointer items-center gap-2 rounded-lg px-2.5 py-1.5 text-sm font-medium outline-none hover:bg-muted focus:bg-muted [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
+                >
+                  <IconX /> X (Twitter)
+                </Menu.Item>
+                <Menu.Item
+                  render={<Link href={siteConfig.links.github} target="_blank" />}
+                  className="flex cursor-pointer items-center gap-2 rounded-lg px-2.5 py-1.5 text-sm font-medium outline-none hover:bg-muted focus:bg-muted [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
+                >
+                  <IconGithub /> GitHub
+                </Menu.Item>
+                <Menu.Item
+                  render={<Link href={siteConfig.links.discord} target="_blank" />}
+                  className="flex cursor-pointer items-center gap-2 rounded-lg px-2.5 py-1.5 text-sm font-medium outline-none hover:bg-muted focus:bg-muted [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
+                >
+                  <IconDiscord /> Discord
+                </Menu.Item>
+              </Menu.Popup>
+            </Menu.Positioner>
+          </Menu.Portal>
+        </Menu.Root>
       </h1>
       <div
         className="gap-1 flex flex-col"
@@ -116,7 +161,7 @@ export function Hero() {
         }} className="font-medium text-muted-foreground">
           I created{" "}
           <Link
-            href={siteConfig.links.spell}
+            href={siteConfig.links.spell_repo}
             target="_blank"
             className="text-primary underline underline-offset-2"
           >
