@@ -60,9 +60,7 @@ export function Hero() {
             animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
             transition={{ ease: "easeOut", duration: 0.8, bounce: 0 }}
           >
-            <Link href={siteConfig.links.x} target="_blank">
               {siteConfig.name},&nbsp;
-            </Link>
           </motion.span>
           <motion.span
             className="inline-block text-accent-foreground/75"
