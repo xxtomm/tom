@@ -90,6 +90,16 @@ export function Hero() {
         >
           <RandomIcon className="text-blue-500" />
         </motion.div>
+        <motion.div
+          className="ml-auto"
+          initial={{ opacity: 0, filter: "blur(5px)", y: 8 }}
+          animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+          transition={{
+            ease: "easeOut",
+            duration: 0.8,
+            bounce: 0,
+          }}
+        >
         <Menu.Root>
           <Menu.Trigger
             render={
@@ -97,7 +107,7 @@ export function Hero() {
                 variant={"ghost"}
                 size={'icon'}
                 aria-label="Links"
-                className="ml-auto cursor-pointer rounded-full transition-transform duration-150 ease-out will-change-transform active:scale-[0.97] flex items-center gap-1.5"
+                className="cursor-pointer rounded-full transition-transform duration-150 ease-out will-change-transform active:scale-[0.97] flex items-center gap-1.5"
               >
                 <IconDotGrid1x3HorizontalTight />
               </Button>
@@ -128,6 +138,7 @@ export function Hero() {
             </Menu.Positioner>
           </Menu.Portal>
         </Menu.Root>
+        </motion.div>
       </h1>
       <div
         className="gap-1 flex flex-col"
