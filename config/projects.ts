@@ -13,6 +13,17 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    type: "video",
+    title: "Personal Site",
+    date: "2026",
+    href: "https://x.com/tomm_ui/status/2040799257494720642",
+    src: `${siteConfig.cdn}/tom.mp4`,
+    alt: "Personal Site",
+    ratio: 1592 / 1080,
+    placeholder:
+      "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAWCAIAAAAuOwkTAAAACXBIWXMAAAAAAAAAAAHqZRakAAADB0lEQVR4nK3VTUvjQBgH8Kdp07dI02o3rZXWxr7YLtGAGPWqF0EsXgQFxQ/g3XVdBMWzePLqQaomviJi9zt4NSh73lpT6FKRVpu0MbOYqgu7Vu3q7zzDf56ZZ2bAYDAAgOG/YBhmNBpxHLfZbARBkCTpdrubm5uDQToWi01PT+/s7MD7YRiG47jFYiEIwuFwfKKogN8/MjKytra2tLT0MMjr9YZCIZqmW3S+t2nRBQKBcDgciUTaQiGGYT7H4rFY58TE5Ozsl/Hx8ft8AFheXk6n06c6URRP6yGK4plOFMXz83Px9PTs/MfKysqADoxGIwBsbm4ihCqVCno3VVURQvv7+/F4nOM4MJlMAJBMJhFCpVKp8m6yLCOEBEEIBAIsy4LH4wGAra0thJCiKHfvVi6XqwE+n49hGAgGg1arVRCEjw3ged7j8dwHhMNhgiBeDdB0dQVQFNXR0QEsyzIMc3R0hBAql8vPzlEUpVQqybKsqn+SVFV9tYL7gOHh4aGhoePj41oBmqZdX19LknTx8/JXLl8sFvL5fKFQqFXu0xm4XK6enh4YGxvr7u4+PDx8oYKbmxtJki4vLrPZbDqdzmQyuVxOluV/R6qqqmmaoijz8/Mcx01NTUEikRgYGEilUs8GqHpTn5ycrK6upr6nstlsJpNRFKXWUu7u7qqXSRCEwcHB/v5+mJycbGtrq9Wmqr6iQqEgSdLV1VWlUnnat1oB1S06ODiIRqOdnZ3g8/lMJtPu7u4LXaRpGkKori7a3t72+/3t7e33XRQKhfb29l44A/VRXQFOp5MkSYjH43a7/cMvWjKZBACn0wkURWEYtrGxgRAqFovyc5R63N7eIoTW19fNZnNra6seAsDz/Me+pjzPkyRJ0/TDc51IJBYWFmZmZmbf5utz5ubmvukWFxdHR0fdbnckEvmAL/MvBoMBx3Gv18uybG9v78N3X/27zY8sFovVarXZbHa7nSCIhoYGh8NBkqTzkcvlamxsbGpqcusoivLqaJrmOK6vr6+rq4thmGg0+hvwi1v8Sz+nkgAAAABJRU5ErkJggg==",
+  },
+  {
     type: "image",
     title: "Spell UI",
     date: "2026",
