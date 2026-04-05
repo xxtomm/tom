@@ -90,6 +90,17 @@ export function Hero() {
         >
           <RandomIcon className="text-blue-500" />
         </motion.div>
+        <motion.div
+          className="ml-auto"
+          initial={{ opacity: 0, filter: "blur(5px)" }}
+          animate={{ opacity: 1, filter: "blur(0px)" }}
+          transition={{
+            ease: "easeOut",
+            duration: 0.8,
+            bounce: 0,
+            delay: 0.8,
+          }}
+        >
         <Menu.Root>
           <Menu.Trigger
             render={
@@ -97,7 +108,7 @@ export function Hero() {
                 variant={"ghost"}
                 size={'icon'}
                 aria-label="Links"
-                className="ml-auto cursor-pointer rounded-full transition-transform duration-150 ease-out will-change-transform active:scale-[0.97] flex items-center gap-1.5"
+                className="cursor-pointer rounded-full transition-transform duration-150 ease-out will-change-transform active:scale-[0.97] flex items-center gap-1.5"
               >
                 <IconDotGrid1x3HorizontalTight />
               </Button>
@@ -128,6 +139,7 @@ export function Hero() {
             </Menu.Positioner>
           </Menu.Portal>
         </Menu.Root>
+        </motion.div>
       </h1>
       <div
         className="gap-1 flex flex-col"
@@ -177,64 +189,52 @@ export function Hero() {
           that feel right.
         </motion.p>
       </div>
-      <div className="flex justify-start items-center gap-2">
-        <motion.div
-          initial={{ opacity: 0, filter: "blur(5px)", y: 8 }}
-          animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
-          transition={{
-            ease: "easeOut",
-            duration: 0.8,
-            bounce: 0,
-            delay: 0.3,
-          }}
+      <motion.div
+        initial={{ opacity: 0, filter: "blur(5px)", y: 8 }}
+        animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+        transition={{
+          ease: "easeOut",
+          duration: 0.8,
+          bounce: 0,
+          delay: 0.3,
+        }}
+        className="flex justify-start items-center gap-2"
+      >
+        <Button
+          variant={"default"}
+          aria-label="Send Message via Telegram"
+          className="shimmer-hover text-[15px] pr-3! cursor-pointer rounded-full transition-transform duration-150 ease-out will-change-transform active:scale-[0.97] flex items-center gap-1.5"
+          asChild
         >
-          <Button
-            variant={"default"}
-            aria-label="Send Message via Telegram"
-            className="shimmer-hover text-[15px] pr-3! cursor-pointer rounded-full transition-transform duration-150 ease-out will-change-transform active:scale-[0.97] flex items-center gap-1.5"
-            asChild
-          >
-            <Link href={siteConfig.links.telegram} target="_blank">
-              <IconTelegram aria-hidden />
-              <span className="shimmer-text font-medium">Send Message</span>
-            </Link>
-          </Button>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, filter: "blur(5px)", y: 8 }}
-          animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
-          transition={{
-            ease: "easeOut",
-            duration: 0.8,
-            bounce: 0,
-            delay: 0.4,
-          }}
+          <Link href={siteConfig.links.telegram} target="_blank">
+            <IconTelegram aria-hidden />
+            <span className="shimmer-text font-medium">Send Message</span>
+          </Link>
+        </Button>
+        <Button
+          variant={"secondary"}
+          aria-label="Copy email address"
+          onClick={handleCopy}
+          className="pr-3! text-[15px] cursor-pointer rounded-full transition-transform duration-150 ease-out will-change-transform active:scale-[0.97] flex items-center gap-1.5"
         >
-          <Button
-            variant={"secondary"}
-            aria-label="Copy email address"
-            onClick={handleCopy}
-            className="pr-3! text-[15px] cursor-pointer rounded-full transition-transform duration-150 ease-out will-change-transform active:scale-[0.97] flex items-center gap-1.5"
-          >
-            <AnimatePresence mode="popLayout" initial={false}>
-              <motion.div
-                key={isCopied ? "check" : "copy"}
-                initial={{ opacity: 0, scale: 0.25, filter: "blur(4px)" }}
-                animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-                exit={{ opacity: 0, scale: 0.25, filter: "blur(4px)" }}
-                transition={{
-                  type: "spring",
-                  duration: 0.3,
-                  bounce: 0,
-                }}
-              >
-                {isCopied ? <IconCheckmark1 /> : <IconEmail1 aria-hidden />}
-              </motion.div>
-            </AnimatePresence>
-            <span className="font-medium">Copy Email</span>
-          </Button>
-        </motion.div>
-      </div>
+          <AnimatePresence mode="popLayout" initial={false}>
+            <motion.div
+              key={isCopied ? "check" : "copy"}
+              initial={{ opacity: 0, scale: 0.25, filter: "blur(4px)" }}
+              animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+              exit={{ opacity: 0, scale: 0.25, filter: "blur(4px)" }}
+              transition={{
+                type: "spring",
+                duration: 0.3,
+                bounce: 0,
+              }}
+            >
+              {isCopied ? <IconCheckmark1 /> : <IconEmail1 aria-hidden />}
+            </motion.div>
+          </AnimatePresence>
+          <span className="font-medium">Copy Email</span>
+        </Button>
+      </motion.div>
     </div>
   );
 }
