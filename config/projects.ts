@@ -60,7 +60,7 @@ export const projects: Project[] = [
     type: "video",
     title: "Spell UI Launch",
     date: "2026",
-    href: siteConfig.links.spell,
+    href: "https://x.com/tomm_ui/status/2029502240709550311",
     src: `${siteConfig.cdn}/spellui-launch.mp4`,
     alt: "Spell UI Launch",
     ratio: 2350 / 1318,
