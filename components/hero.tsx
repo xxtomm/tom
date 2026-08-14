@@ -21,7 +21,7 @@ import {
 import { AnimatePresence, motion } from "motion/react";
 import { Menu } from "@base-ui/react/menu";
 import { Button } from "@/components/ui/button";
-import { getAge, siteConfig } from "@/config/site";
+import { siteConfig } from "@/config/site";
 
 const heroIcons = [
   IconPaintBrush,
@@ -150,7 +150,7 @@ export function Hero() {
           bounce: 0,
           delay: 0.1,
         }} className="font-medium text-muted-foreground">
-          I&apos;m a {getAge()} y/o{" "}
+          I&apos;m a{" "}
           <span className="text-primary">design engineer</span>{" "}
           who cares deeply about craft, detail, and the{" "}
           <span className=" font-bold font-caveat text-xl pr-1 leading-0 whitespace-nowrap bg-clip-text text-transparent bg-[linear-gradient(180deg,oklch(0.40_0.29_291),oklch(0.74_0.15_19))]">
