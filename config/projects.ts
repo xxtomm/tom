@@ -15,6 +15,17 @@ export type Project = {
 export const projects: Project[] = [
   {
     type: "video",
+    title: "ign.bio beta",
+    date: "2026",
+    href: "https://ign.bio",
+    src: `${siteConfig.cdn}/hero.mp4`,
+    alt: "ign.bio beta",
+    ratio: 3392 / 2040,
+    placeholder:
+      "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAATCAIAAAB+9pigAAAACXBIWXMAAAPoAAAD6AG1e1JrAAAAmElEQVR4nO2UMQoCQQxF08Q/mTibmVFHQbay2cYDbOFlFrzL4pUXRFi00u0ULAZeFT5JCD+f2vY0DNeuOxOtgIZ5/Y5qNNumVHLel3I024WwMcsfxSJWymEcb9N07/sLicSUimoEwjIN0IjYi2dlSS9iqjGELGIEBGYHOMB/EWY3t/U0L+J/B9UBqCfy1UWoj+ZrVODP0/QB1dNBnsWc8wAAAAAASUVORK5CYII=",
+  },
+  {
+    type: "video",
     title: "Gifting Interaction",
     date: "2026",
     href: "https://x.com/tomm_ui/status/2085789125752623176",
