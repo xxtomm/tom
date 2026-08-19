@@ -9,9 +9,21 @@ export type Project = {
   alt: string;
   ratio: number;
   placeholder: string;
+  stars?: string;
 };
 
 export const projects: Project[] = [
+  {
+    type: "video",
+    title: "Gifting Interaction",
+    date: "2026",
+    href: "https://x.com/tomm_ui/status/2085789125752623176",
+    src: `${siteConfig.cdn}/gifting.mp4`,
+    alt: "Gifting Interaction",
+    ratio: 1640 / 1080,
+    placeholder:
+      "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAVCAIAAACor3u9AAAACXBIWXMAAAAAAAAAAAHqZRakAAACxUlEQVR4nK2VS2sTURSA70ySaTJzzzkzk0wmk6QP4qNp6ENQayF92VartShasG58FFGolloaW1rUgou+EGlddCXuBJe6UKguKkgr6EpRVz5wo3/AjbuRjCktdhJp049Z3IHL+e65595zmSSTwHJImDi99+SpcCnbRrREZ1dFXcTrZYwJIi+taF7o7OvUY9nfbRH4tOre9LkWK+aTAwjAUTPD0d2GBQqHIlAUZU0BeipsRBGBsiAiKIhUHACwloQocMIQ0VpQtcjwlBP4PV6mezwoSgZqhdesOiBmE/w7LixAQMZYPUaYPXFmqb0uRSE5/8IRUZZ9suxNJndVVyc5lxSlBAtuIzoZVJQozH70xJ4fbAyafkTNPToYRqSlub+zfaTv7MzF8zNH2zNtrQOGYa2WzV0gMLZPRmYvvrbvzR40YxKAm0DlXLZilSNDr6bHP/38/vvb51+zNz6MDy/H4ynO3dNWnRooolgjc2a/WLHnp1qtgoLozmv9zyYzb96+/LH4+OtkZuX61eexWKWrQCWSABpMqzdWnj1C9tMle+Fuo2kVzmBseHnu1rv7kx8f3PkyP/H+ZmYlHk+6CjQiCSGthe3bmeOl5Wy0qtaemzocjfvcBYQIwaCZTvd1dVzpaus/0jHYfWiotelyJBJ3rbNKJKu0g8ge67Wnx9gFy3rYUN3ibFH+o4ec+xFlJCBSSOWAgfX35t8CEJVp6mJrjT3Qw1KyEhAEAJ43uIPmoOtBXQ86A53yg0Qhop5g+FIsmrvMCv+PYLMggO7xqF5vrmUC5D3RxfYiQSwpXqAWEDAmbk2grkJECiI4fcpVIDAmBAKBTTR7RCSNK9z5FABIhMxo2ETdAMSN70FWsNlnKmCUQeKAP1wpQZgx1hSyptqOmVX7faBtnLwVgSCK0YbuPT2jkdoTPiXrqA9FS60yCXXB41s/9Q/gILNbp3FyswAAAABJRU5ErkJggg==",
+  },
   {
     type: "video",
     title: "Navigation Menu",
@@ -39,6 +51,7 @@ export const projects: Project[] = [
     title: "Spell UI",
     date: "2026",
     href: siteConfig.links.spell,
+    stars: "1.1k",
     src: `${siteConfig.cdn}/spell-cropped.png`,
     alt: "Spell UI",
     ratio: 2179 / 1346,

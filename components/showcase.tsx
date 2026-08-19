@@ -3,7 +3,10 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { IconSquareArrowTopRight2 } from "@central-icons-react/round-filled-radius-3-stroke-2";
+import {
+  IconSquareArrowTopRight2,
+  IconStar,
+} from "@central-icons-react/round-filled-radius-3-stroke-2";
 import { motion } from "motion/react";
 import { projects } from "@/config/projects";
 
@@ -62,18 +65,29 @@ export function ProjectShowcase() {
             )}
           </div>
           <div className="flex items-center justify-between border-t px-3.5 py-2.5 text-sm">
-            {project.href ? (
-              <Link
-                href={project.href}
-                target="_blank"
-                className="inline-flex items-center gap-1.5 font-medium [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-3.5"
-              >
-                {project.title}
-                <IconSquareArrowTopRight2 className="text-muted-foreground" />
-              </Link>
-            ) : (
-              <span className="font-medium">{project.title}</span>
-            )}
+            <div className="flex items-center gap-2">
+              {project.href ? (
+                <Link
+                  href={project.href}
+                  target="_blank"
+                  className="inline-flex items-center gap-1.5 font-medium [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-3.5"
+                >
+                  {project.title}
+                  <IconSquareArrowTopRight2 className="text-muted-foreground" />
+                </Link>
+              ) : (
+                <span className="font-medium">{project.title}</span>
+              )}
+              {project.stars && (
+                <span
+                  aria-label={`${project.stars} GitHub stars`}
+                  className="inline-flex items-center gap-1 font-medium text-yellow-400 [&_svg]:size-3.5 [&_svg]:shrink-0"
+                >
+                  <IconStar aria-hidden />
+                  {project.stars}
+                </span>
+              )}
+            </div>
             <span className="text-muted-foreground">{project.date}</span>
           </div>
         </motion.div>
