@@ -13,7 +13,7 @@ import {
   IconPencilLine,
   IconPullRequest,
   IconRocket,
-  IconTelegram,
+  IconCookies,
   IconThinkingBubble,
   IconWindowCursor,
   IconX,
@@ -199,13 +199,13 @@ export function Hero() {
       >
         <Button
           variant={"default"}
-          aria-label="Send Message via Telegram"
+          aria-label="Sponsor me on GitHub"
           className="shimmer-hover text-[15px] pr-3! cursor-pointer rounded-full transition-transform duration-150 ease-out will-change-transform active:scale-[0.97] flex items-center gap-1.5"
           asChild
         >
-          <Link href={siteConfig.links.telegram} target="_blank">
-            <IconTelegram aria-hidden />
-            <span className="shimmer-text font-medium">Send Message</span>
+          <Link href={siteConfig.links.sponsor} target="_blank">
+            <IconCookies aria-hidden />
+            <span className="shimmer-text font-medium">Sponsor Me</span>
           </Link>
         </Button>
         <Button

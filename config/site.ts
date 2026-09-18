@@ -6,6 +6,7 @@ export const siteConfig = {
   cdn: "https://cdn.tomm.page",
   links: {
     telegram: "https://t.me/tomm_dev",
+    sponsor: "https://github.com/sponsors/xxtomm",
     spell: "https://spell.sh",
     x: "https://x.com/tomm_ui",
     x_spell: "https://x.com/spell_ui",
