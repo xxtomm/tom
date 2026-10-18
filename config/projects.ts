@@ -62,7 +62,7 @@ export const projects: Project[] = [
     title: "Spell UI",
     date: "2026",
     href: siteConfig.links.spell,
-    stars: "1.1k",
+    stars: "1.4k",
     src: `${siteConfig.cdn}/spell-cropped.png`,
     alt: "Spell UI",
     ratio: 2179 / 1346,
