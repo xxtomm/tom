@@ -14,6 +14,15 @@ export const siteConfig = {
     github: "https://github.com/xxtomm",
     discord: "https://discord.com/users/1122878999065002155"
   },
+  sponsors: [
+    {
+      name: "Guillermo Rauch",
+      handle: "rauchg",
+      href: "https://x.com/rauchg",
+      avatar:
+        "https://pbs.twimg.com/profile_images/1783856060249595904/8TfcCN0r_400x400.jpg",
+    },
+  ],
 } as const;
 
 export function getAge() {

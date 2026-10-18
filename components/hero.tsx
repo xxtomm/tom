@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import {
   IconAudio,
@@ -31,6 +32,8 @@ const heroIcons = [
   IconThinkingBubble,
   IconPullRequest,
 ];
+
+const [sponsor] = siteConfig.sponsors;
 
 export function Hero() {
   const [isCopied, setIsCopied] = useState(false);
@@ -185,6 +188,36 @@ export function Hero() {
           </Link>{" "}
           that feel right.
         </motion.p>
+        <motion.p
+          initial={{ opacity: 0, filter: "blur(5px)", y: 8 }}
+          animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+          transition={{
+            ease: "easeOut",
+            duration: 0.8,
+            bounce: 0,
+            delay: 0.3,
+          }}
+          className="mt-2 font-medium text-muted-foreground"
+        >
+          Sponsored by{" "}
+          <Link
+            href={sponsor.href}
+            target="_blank"
+            className="inline-flex items-baseline gap-1 align-baseline text-primary underline underline-offset-2"
+          >
+            <Image
+              src={sponsor.avatar}
+              alt=""
+              width={64}
+              height={64}
+              quality={90}
+              draggable={false}
+              className="my-auto size-4 rounded-full select-none"
+            />
+            {sponsor.name}
+          </Link>
+          .
+        </motion.p>
       </div>
       <motion.div
         initial={{ opacity: 0, filter: "blur(5px)", y: 8 }}
@@ -193,9 +226,9 @@ export function Hero() {
           ease: "easeOut",
           duration: 0.8,
           bounce: 0,
-          delay: 0.3,
+          delay: 0.4,
         }}
-        className="flex justify-start items-center gap-2"
+        className="-mt-1 flex justify-start items-center gap-2"
       >
         <Button
           variant={"default"}
