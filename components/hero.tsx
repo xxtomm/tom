@@ -10,6 +10,7 @@ import {
   IconDotGrid1x3HorizontalTight,
   IconEmail1,
   IconGithub,
+  IconHeart2,
   IconPaintBrush,
   IconPencilLine,
   IconPullRequest,
@@ -199,7 +200,10 @@ export function Hero() {
           }}
           className="mt-2 font-medium text-muted-foreground"
         >
-          Sponsored by{" "}
+          <span className="inline-flex items-baseline gap-1.5 align-baseline [&_svg]:pointer-events-none [&_svg]:size-4.5 [&_svg]:shrink-0">
+            <IconHeart2 aria-hidden className="my-auto text-red-500" />
+            Sponsored by
+          </span>{" "}
           <Link
             href={sponsor.href}
             target="_blank"
